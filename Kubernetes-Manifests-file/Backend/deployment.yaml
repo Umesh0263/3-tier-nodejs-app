@@ -21,11 +21,9 @@ spec:
       labels:
         role: api
     spec:
-      imagePullSecrets:
-      - name: ecr-registry-secret
       containers:
       - name: api
-        image: 407622020962.dkr.ecr.us-east-1.amazonaws.com/backend:latest
+        image: umeshdamale/nodejs:backend
         imagePullPolicy: Always
         env:
           - name: MONGO_CONN_STR
@@ -42,7 +40,7 @@ spec:
                 key: password
         ports:
         - containerPort: 3500
-        livenessProbe: 
+        livenessProbe:
           httpGet:
             path: /ok
             port: 3500
