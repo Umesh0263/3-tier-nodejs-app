@@ -4,7 +4,7 @@ metadata:
   name: mainlb
   namespace: three-tier
 spec:
-  ingressClassName: alb
+  ingressClassName: nginx
   rules:
     - host: backend.umeshdamale.site
       http:
